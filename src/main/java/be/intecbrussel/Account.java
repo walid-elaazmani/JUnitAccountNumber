@@ -14,7 +14,6 @@ public class Account {
     private void setAccountNumber(String accountNumber) {
 
         if (accountNumber.length() == 12 && accountNumber.matches("[0-9]+")){
-
             long splitNumber1 = Long.parseLong(accountNumber.substring(0,10));
             long splitNumber2 = Long.parseLong(accountNumber.substring(10,12));
 
@@ -25,13 +24,8 @@ public class Account {
         else throw new RuntimeException("The number is too short/long or contains other characters");
     }
 
-
     public String getAccountNumber() {
         return accountNumber;
     }
 
-    public static void main(String[] args) {
-        Account account = new Account("056879652107");
-        System.out.println(account.getAccountNumber());
-    }
 }

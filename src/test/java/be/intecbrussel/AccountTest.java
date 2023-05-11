@@ -41,20 +41,6 @@ class AccountTest {
                     Account user = new Account("45");
                 }
         );
-
         assertEquals("The number is too short/long or contains other characters", exception.getMessage());
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
 }
