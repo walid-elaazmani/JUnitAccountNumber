@@ -11,7 +11,7 @@ class AccountTest {
     @Test
     void ANumberThatFulfillsTheRulesShouldDisplayTheNumber(){
 
-        Account account = new Account("456879652106");
+        Account account = new Account("456-8796521-06");
 
         String expectedNumber = "456-8796521-06";
 
@@ -24,7 +24,7 @@ class AccountTest {
     @Test
     void ANumberOfWhichTheTwoLastNumbersAreNotEqualToTheRestOfTheModuloOfTheTenFirstNumbersBy97ShouldReturnNull(){
 
-        Account account = new Account("456879652108");
+        Account account = new Account("456-8796521-08");
 
         String expectedNumber = null;
 
