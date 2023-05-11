@@ -13,10 +13,7 @@ public class Account {
 
             String stringToLong = accountNumber.replaceAll("-", "");
 
-            long splitNumber1 = Long.parseLong(stringToLong.substring(0,10));
-            long splitNumber2 = Long.parseLong(stringToLong.substring(10,12));
-
-            if ((splitNumber1) % 97 == (splitNumber2)){
+            if ((Long.parseLong(stringToLong.substring(0,10)) % 97 == (Long.parseLong(stringToLong.substring(10,12))))){
                 this.accountNumber = accountNumber;
             }
        }
