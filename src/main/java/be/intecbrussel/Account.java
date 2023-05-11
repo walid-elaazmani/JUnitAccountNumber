@@ -8,13 +8,16 @@ public class Account {
     }
 
     private void setAccountNumber(String accountNumber) {
+        
+        if (accountNumber.matches("(\\d{3})-(\\d{7})-(\\d{2})")){
 
-        if (accountNumber.length() == 12 && accountNumber.matches("[0-9]+")){
-            long splitNumber1 = Long.parseLong(accountNumber.substring(0,10));
-            long splitNumber2 = Long.parseLong(accountNumber.substring(10,12));
+            String stringToLong = accountNumber.replaceAll("-", "");
+
+            long splitNumber1 = Long.parseLong(stringToLong.substring(0,10));
+            long splitNumber2 = Long.parseLong(stringToLong.substring(10,12));
 
             if ((splitNumber1) % 97 == (splitNumber2)){
-                this.accountNumber = String.valueOf(accountNumber).replaceFirst("(\\d{3})(\\d{7})(\\d{2})", "$1-$2-$3");
+                this.accountNumber = accountNumber;
             }
        }
         else throw new RuntimeException("The number is too short/long or contains other characters");
